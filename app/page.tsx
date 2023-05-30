@@ -8,10 +8,15 @@ import { useLayoutEffect, useRef } from 'react'
 
 export default function Home() {
   const main = useRef();
-  const smoother  = useRef<HTMLDivElement>(null);
+  const smoother  = useRef<ScrollSmoother>();
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
+      
+      if(smoother.current !== null){
+        return smoother.current 
+      }
+
       smoother.current = ScrollSmoother.create({
         smooth : 2,
         effects : true
@@ -22,9 +27,10 @@ export default function Home() {
   
   })
   return (
+    <>
     <main className="flex min-h-screen flex-col justify-center items-center" ref={main}>
       <HeaderComponent></HeaderComponent>
-      <HeaderComponent></HeaderComponent>
     </main>
-  )
+    </>
+      )
 }
