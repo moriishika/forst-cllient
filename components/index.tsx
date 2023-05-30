@@ -1,3 +1,1 @@
-import TextEditor from "./TextEditor";
-
-export {TextEditor};
+import HeaderComponent from "./HeaderComponent";
