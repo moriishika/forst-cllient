@@ -1,36 +1,41 @@
 'use client'
 
-import { HeaderComponent } from '@/components'
+import { AboutComponent, HeaderComponent } from '@/components'
 import { gsap } from 'gsap'
-import { ScrollSmoother } from 'gsap/all'
+import { ScrollSmoother, ScrollTrigger } from 'gsap/all'
 import { useLayoutEffect, useRef } from 'react'
 
 
-export default function Home() {
-  const main = useRef();
-  const smoother  = useRef<ScrollSmoother>();
 
+export default function Home() {
+  const main = useRef(null);
+  const smoother = useRef<ScrollSmoother>();
+
+  gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+
+  console.log(main)
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
-      
-      if(smoother.current !== null){
-        return smoother.current 
+
+      if (smoother.current !== null) {
+        return smoother.current
       }
 
       smoother.current = ScrollSmoother.create({
-        smooth : 2,
-        effects : true
+        smooth: 2,
+        effects: true
       });
-      
+
       return () => ctx.revert();
-    }, [])
-  
-  })
+    }, main)
+
+  }, [])
   return (
     <>
-    <main className="flex min-h-screen flex-col justify-center items-center" ref={main}>
-      <HeaderComponent></HeaderComponent>
-    </main>
+      <main className="" ref={main}>
+        <HeaderComponent></HeaderComponent>
+        <AboutComponent></AboutComponent>
+      </main>
     </>
-      )
+  )
 }

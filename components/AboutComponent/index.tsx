@@ -2,7 +2,7 @@ const AboutComponent = () => {
 
   return (
     <>
-      <div>
+      <div className="prose">
         <h1>Hello</h1>
         <h2>My name is Morii Shikaa</h2>
         <p>
