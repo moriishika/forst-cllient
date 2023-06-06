@@ -1,3 +1,5 @@
+import PageIndicator from "../PageIndicator";
+
 const SongsSection = () => {
   return(
     <>
@@ -12,6 +14,7 @@ const SongsSection = () => {
         Vinyl Tracker
       </div>
     </div>
+    <PageIndicator pageTitle="Forest of Songs"></PageIndicator>
     </>
   )
 }

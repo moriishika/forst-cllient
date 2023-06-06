@@ -1,3 +1,5 @@
+import PageIndicator from "../PageIndicator";
+
 const AboutComponent = () => {
 
   return (
@@ -22,6 +24,7 @@ const AboutComponent = () => {
           for visiting or even intend to come back.
         </p>
       </div>
+      <PageIndicator pageTitle="warm welcome from the forest"></PageIndicator>
     </>
   )
 }

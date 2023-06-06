@@ -1,6 +1,6 @@
 'use client'
 
-import { AboutComponent, HeaderComponent } from '@/components'
+import { AboutComponent, HeaderComponent, SongsSection, StoriesSection, ThoughtSection } from '@/components'
 import { useRef } from 'react';
 
 
@@ -14,6 +14,9 @@ export default function Home() {
       <main className="" ref={main}>
         <HeaderComponent></HeaderComponent>
         <AboutComponent></AboutComponent>
+        <StoriesSection></StoriesSection>
+        <SongsSection></SongsSection>
+        <ThoughtSection></ThoughtSection>
       </main>
     </>
   )

@@ -1,6 +1,6 @@
-const PageIndicator = () => {
+const PageIndicator = ({pageTitle} : {pageTitle: string}) => {
   return (
-    <p>Warm welcome from the forst</p>
+    <p>{pageTitle}</p>
   );
 }
 
