@@ -13,7 +13,7 @@ const ColumnIndicator = ( ) => {
 const StoriesSection = () => {
   return(
     <>
-      <div>
+      <div className="min-h-screen bg-green-100 w-full">
         <h1>Stories</h1>
       </div>
       <div>
